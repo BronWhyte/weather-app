@@ -1,0 +1,76 @@
+body {
+  margin-top: 40px;
+  font-family: "Baloo 2", cursive;
+}
+
+h1 {
+  padding-top: 30px;
+}
+
+.bodyWrapper {
+  border: 1px solid #757a79;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.partlyCloudy {
+  font-size: 70px;
+  color: #757a79;
+}
+
+.temperature {
+  font-size: 70px;
+  padding-left: 40px;
+}
+
+.unit {
+  text-decoration: none;
+  color: #6bba62;
+}
+
+#weatherDescription {
+  text-transform: capitalize;
+}
+
+#citySearchWrapper {
+  text-align: right;
+}
+
+.citySearch {
+  padding: 10px 15px;
+  border: 1px solid #6bba62;
+  background: #fff;
+  border: 1px solid #6bba62;
+  transition: all 200ms ease-in-out;
+  color: #757a79;
+}
+
+.citySearch:hover {
+  background: #6bba62;
+}
+
+.currentPrecipitation {
+  font-size: 20px;
+}
+
+.fiveDayWeather {
+  font-size: 60px;
+  text-align: center;
+  color: #757a79;
+}
+
+.fiveDayTemp {
+  font-size: 25px;
+}
+
+.card {
+  border: 1px solid #6bba62;
+}
+
+.centerWrapper {
+  padding: 10px;
+}
+
+.card-text {
+  padding-top: 5px;
+}

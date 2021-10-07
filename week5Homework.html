@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      rel="icon"
+      type="img/png"
+      href="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-cloud-weather-justicon-flat-justicon-1.png"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="bodyWrapper">
+        <form id="citySearchWrapper">
+          <input
+            type="search"
+            name="search"
+            placeholder="Enter a city"
+            class="citySearch"
+            id="searchInput"
+            autofocus
+          />
+          <input
+            type="submit"
+            value="Search"
+            class="citySearch"
+            id="searchButton"
+          />
+          <input
+            type="submit"
+            value="Current location"
+            class="citySearch"
+            id="currentButton"
+          />
+        </form>
+
+        <h1>Welcome</h1>
+        <h2>Saturday, 18 September 2021</h2>
+        <h3></h3>
+        <i class="fas fa-cloud-sun partlyCloudy"></i>
+        <span class="temperature"> <span id="degNumber">11</span>&deg;C</span>
+        <br />
+        <p class="currentPrecipitation" id="weatherDescription">
+          Partly cloudy
+        </p>
+        <div class="centerWrapper"></div>
+
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">
+                  Sunday <br />
+                  19 September
+                </h5>
+                <p class="card-text">
+                  <i class="fas fa-cloud-showers-heavy fiveDayWeather"></i>
+                </p>
+                <p class="fiveDayTemp">17&deg;C / 10&deg;C</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">
+                  Monday <br />
+                  20 September
+                </h5>
+                <p class="card-text">
+                  <i class="fas fa-cloud-showers-heavy fiveDayWeather"></i>
+                </p>
+                <p class="fiveDayTemp">18&deg;C / 12&deg;C</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">
+                  Tuesday <br />
+                  21 September
+                </h5>
+                <p class="card-text">
+                  <i class="fas fa-cloud fiveDayWeather" id="bigCloud"></i>
+                </p>
+                <p class="fiveDayTemp">18&deg;C / 13&deg;C</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">
+                  Wednesday <br />
+                  22 September
+                </h5>
+                <p class="card-text">
+                  <i class="fas fa-cloud-rain fiveDayWeather"></i>
+                </p>
+                <p class="fiveDayTemp">15&deg;C / 11&deg;C</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">
+                  Thursday <br />
+                  23 September
+                </h5>
+                <p class="card-text">
+                  <i class="fas fa-cloud-rain fiveDayWeather"></i>
+                </p>
+                <p class="fiveDayTemp">14&deg;C / 9&deg;C</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/57d89758e4.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
