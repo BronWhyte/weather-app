@@ -51,6 +51,10 @@ function showTemp(response) {
   tempDisplay.innerHTML = temperature;
   let weatherCondition = document.querySelector("#weatherDescription");
   weatherCondition.innerHTML = response.data.weather[0].description;
+  let humidity = (document.querySelector("#humidity").innerHTML =
+    response.data.main.humidity);
+  let wind = Math.round(response.data.wind.speed);
+  let windSpeed = (document.querySelector("#windSpeed").innerHTML = wind);
 }
 
 function searchCity(event) {

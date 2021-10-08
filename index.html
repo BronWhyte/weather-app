@@ -55,12 +55,25 @@
         <h1>Welcome</h1>
         <h2>Saturday, 18 September 2021</h2>
         <h3></h3>
-        <i class="fas fa-cloud-sun partlyCloudy"></i>
-        <span class="temperature"> <span id="degNumber">11</span>&deg;C</span>
-        <br />
-        <p class="currentPrecipitation" id="weatherDescription">
-          Partly cloudy
-        </p>
+        <div class="row">
+          <div class="col-6">
+            <i class="fas fa-cloud-sun partlyCloudy"></i>
+            <span class="temperature">
+              <span id="degNumber">11</span>&deg;C</span
+            >
+
+            <br />
+            <p class="currentPrecipitation" id="weatherDescription">
+              Partly cloudy
+            </p>
+          </div>
+          <div class="col-6">
+            <ul class="weatherConditions">
+              <li>Humidity: <span id="humidity"></span>%</li>
+              <li>Wind speed: <span id="windSpeed"></span>km/h</li>
+            </ul>
+          </div>
+        </div>
         <div class="centerWrapper"></div>
 
         <div class="row">
