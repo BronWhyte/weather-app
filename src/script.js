@@ -32,6 +32,7 @@ let year = now.getFullYear();
 
 let heading = document.querySelector("h2");
 heading.innerHTML = `${day}, ${date} ${month} ${year}`;
+let forecastDay = (document.querySelector("#forecastDay").innerHTML = `${day}`);
 
 let hour = now.getHours();
 let minute = now.getMinutes();
