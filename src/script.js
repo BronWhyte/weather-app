@@ -55,6 +55,13 @@ function showTemp(response) {
     response.data.main.humidity);
   let wind = Math.round(response.data.wind.speed);
   let windSpeed = (document.querySelector("#windSpeed").innerHTML = wind);
+  let icon = document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+  icon.setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchCity(event) {
