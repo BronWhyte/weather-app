@@ -11,6 +11,7 @@ h1 {
   border: 1px solid #757a79;
   border-radius: 4px;
   padding: 20px;
+  max-width: 1000px;
 }
 
 .partlyCloudy {
@@ -26,6 +27,9 @@ h1 {
 .unit {
   text-decoration: none;
   color: #6bba62;
+  font-size: 30px;
+  position: relative;
+  top: -22px;
 }
 
 #weatherDescription {
