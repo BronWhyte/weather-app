@@ -108,9 +108,13 @@ currentLocation.addEventListener("click", allowAccess);
 
 function showFahrenheitTemp(event) {
   event.preventDefault();
+
   let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
   let temperature = document.querySelector("#degNumber");
   temperature.innerHTML = Math.round(fahrenheitTemp);
+
+  celsiusLink.classList.remove("active");
+  fahrenheit.classList.add("active");
 }
 
 function showCelsiusTemp(event) {
@@ -118,6 +122,9 @@ function showCelsiusTemp(event) {
 
   let temperature = document.querySelector("#degNumber");
   temperature.innerHTML = Math.round(celsiusTemperature);
+
+  celsiusLink.classList.add("active");
+  fahrenheit.classList.remove("active");
 }
 
 let celsiusTemperature = null;
