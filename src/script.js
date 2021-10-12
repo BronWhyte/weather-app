@@ -46,21 +46,21 @@ let time = document.querySelector("h3");
 time.innerHTML = `${hour}:${minuteString}`;
 
 function showTemp(response) {
+  celsiusTemperature = response.data.main.temp;
+
   let tempDisplay = document.querySelector("#degNumber");
-  let temperature = Math.round(response.data.main.temp);
-  tempDisplay.innerHTML = temperature;
+  tempDisplay.innerHTML = Math.round(celsiusTemperature);
   let weatherCondition = document.querySelector("#weatherDescription");
   weatherCondition.innerHTML = response.data.weather[0].description;
   let humidity = (document.querySelector("#humidity").innerHTML =
     response.data.main.humidity);
   let wind = Math.round(response.data.wind.speed);
   let windSpeed = (document.querySelector("#windSpeed").innerHTML = wind);
-  let icon = document
-    .querySelector("#icon")
-    .setAttribute(
-      "src",
-      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    );
+  let icon = document.querySelector("#icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   icon.setAttribute("alt", response.data.weather[0].description);
 }
 
@@ -105,3 +105,24 @@ function allowAccess() {
 
 let currentLocation = document.querySelector("#currentButton");
 currentLocation.addEventListener("click", allowAccess);
+
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  let temperature = document.querySelector("#degNumber");
+  temperature.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function showCelsiusTemp(event) {
+  event.preventDefault();
+
+  let temperature = document.querySelector("#degNumber");
+  temperature.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", showFahrenheitTemp);
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", showCelsiusTemp);

@@ -29,7 +29,17 @@ h1 {
   color: #6bba62;
   font-size: 30px;
   position: relative;
-  top: -22px;
+  top: -14px;
+}
+
+.unit .active {
+  color: rgb(33, 33, 33);
+  text-decoration: none;
+  cursor: default;
+}
+
+.unit .active:hover {
+  text-decoration: none;
 }
 
 #weatherDescription {
