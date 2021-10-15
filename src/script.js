@@ -32,7 +32,6 @@ let year = now.getFullYear();
 
 let heading = document.querySelector("h2");
 heading.innerHTML = `${day}, ${date} ${month} ${year}`;
-let forecastDay = (document.querySelector("#forecastDay").innerHTML = `${day}`);
 
 let hour = now.getHours();
 let minute = now.getMinutes();
@@ -133,3 +132,34 @@ let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", showFahrenheitTemp);
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsiusTemp);
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Friday", "Saturday", "Sunday", "Monday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-2">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">
+          <span id="forecastDay">${day}</span> <br />
+          <span id="forecastDate">20 September</span>
+        </h5>
+        <p class="card-text">
+          <i class="fas fa-cloud-showers-heavy fiveDayWeather"></i>
+        </p>
+        <p class="fiveDayTemp"><span id="maxTemp">18</span>&deg;C / <span id="minTemp">12</span>&deg;C</p>
+      </div>
+    </div>
+  </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();
