@@ -87,61 +87,6 @@ function searchCity(event) {
 let form = document.querySelector("#citySearchWrapper");
 form.addEventListener("submit", searchCity);
 
-function showCurrentLocation(response) {
-  let locationName = document.querySelector("h1");
-  locationName.innerHTML = response.data.list[0].name;
-  let currentLocationTemp = document.querySelector("#degNumber");
-  let temperature = Math.round(response.data.list[0].main.temp);
-  currentLocationTemp.innerHTML = temperature;
-  let currentWeather = document.querySelector("#weatherDescription");
-  currentWeather.innerHTML = response.data.list[0].weather[0].description;
-}
-
-function getLocation(position) {
-  let latitude = position.coords.latitude;
-  let longitude = position.coords.longitude;
-
-  let apiKey = "515c9ddbeb3cda9061acfab71031839e";
-  let apiUrlLocation = `https://api.openweathermap.org/data/2.5/find?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-
-  axios.get(apiUrlLocation).then(showCurrentLocation);
-}
-
-function allowAccess() {
-  navigator.geolocation.getCurrentPosition(getLocation);
-}
-
-let currentLocation = document.querySelector("#currentButton");
-currentLocation.addEventListener("click", allowAccess);
-
-function showFahrenheitTemp(event) {
-  event.preventDefault();
-
-  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
-  let temperature = document.querySelector("#degNumber");
-  temperature.innerHTML = Math.round(fahrenheitTemp);
-
-  celsiusLink.classList.remove("active");
-  fahrenheit.classList.add("active");
-}
-
-function showCelsiusTemp(event) {
-  event.preventDefault();
-
-  let temperature = document.querySelector("#degNumber");
-  temperature.innerHTML = Math.round(celsiusTemperature);
-
-  celsiusLink.classList.add("active");
-  fahrenheit.classList.remove("active");
-}
-
-let celsiusTemperature = null;
-
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", showFahrenheitTemp);
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", showCelsiusTemp);
-
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();

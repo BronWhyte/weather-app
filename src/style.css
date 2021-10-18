@@ -32,16 +32,6 @@ h1 {
   top: -26px;
 }
 
-.unit .active {
-  color: rgb(33, 33, 33);
-  text-decoration: none;
-  cursor: default;
-}
-
-.unit .active:hover {
-  text-decoration: none;
-}
-
 #weatherDescription {
   text-transform: capitalize;
 }
@@ -55,11 +45,14 @@ h1 {
   border: 1px solid #6bba62;
   background: #fff;
   border: 1px solid #6bba62;
-  transition: all 200ms ease-in-out;
   color: #757a79;
 }
 
-.citySearch:hover {
+#searchButton {
+  transition: all 200ms ease-in-out;
+}
+
+#searchButton:hover {
   background: #6bba62;
 }
 
@@ -91,6 +84,7 @@ h1 {
 
 .footerNote {
   text-align: center;
+  padding-top: 15px;
 }
 
 ul {
