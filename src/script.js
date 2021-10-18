@@ -142,29 +142,57 @@ fahrenheit.addEventListener("click", showFahrenheitTemp);
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsiusTemp);
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[day];
+}
+
 function displayForecast(response) {
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  let days = ["Friday", "Saturday", "Sunday", "Monday"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
     <div class="col-2">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">
-          <span id="forecastDay">${day}</span> <br />
-          <span id="forecastDate">20 September</span>
+          <span id="forecastDay">${formatDay(forecastDay.dt)}</span> <br />
         </h5>
         <p class="card-text">
-          <i class="fas fa-cloud-showers-heavy fiveDayWeather"></i>
+          <img
+            src="https://openweathermap.org/img/wn/${
+              forecastDay.weather[0].icon
+            }@2x.png"
+            alt=""
+            width="60"
+          />
         </p>
-        <p class="fiveDayTemp"><span id="maxTemp">18</span>&deg;C / <span id="minTemp">12</span>&deg;C</p>
+        <p class="fiveDayTemp"><span id="maxTemp">${Math.round(
+          forecastDay.temp.max
+        )}</span>&deg;C / <span id="minTemp">${Math.round(
+          forecastDay.temp.min
+        )}</span>&deg;C</p>
       </div>
     </div>
   </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
